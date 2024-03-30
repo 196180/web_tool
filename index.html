@@ -12,27 +12,6 @@
     <link rel="shortcut icon" href="./assets/images/favicon.png" />
     <meta name="keywords" content="锋锋资源站" />
     <meta name="description" content="在线网址导航, 各类开发工具、绘图绘画工具、md5、在线ps、base64、计算器等" />
-	
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	#player {
-  width: 100%;
-  height: 100%;
-  position: relative;
-}
-
-.cloud-music-player-icon {
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translate(-50%, 0);
-  width: 50px;
-  height: 50px;
-  background-image: url(https://unpkg.com/cloud-music-player@1.0.0/dist/cloud-music-player.svg);
-  background-size: contain;
-  background-repeat: no-repeat;
-  cursor: pointer;
-}
-
 
     <link rel="stylesheet" id="block-library-css"
         href="./assets/css/block-library.min-5.6.2.css" type="text/css" media="all" />
@@ -5725,27 +5704,6 @@
         </div>
     </div>
 </div>
-
-
-<div id="player"></div>
-
-<script src="https://unpkg.com/cloud-music-player@1.0.0/dist/cloud-music-player.min.js"></script>
-
-<script>
-  const player = new CloudMusicPlayer({
-    container: '#player',
-    id: 'YOUR_SONG_ID',
-    autoplay: false,
-  });
-
-  const icon = document.createElement('div');
-  icon.classList.add('cloud-music-player-icon');
-  icon.addEventListener('click', () => {
-    player.togglePlay();
-  });
-
-  document.body.appendChild(icon);
-</script>
 
 
 
