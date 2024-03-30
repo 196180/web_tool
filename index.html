@@ -60,31 +60,6 @@
 </head>
 
 
-
-<body class="io-grey-mode">
-
-<div id="player"></div>
-
-<script src="https://unpkg.com/cloud-music-player@1.0.0/dist/cloud-music-player.min.js"></script>
-
-<script>
-  const player = new CloudMusicPlayer({
-    container: '#player',
-    id: '3778678',
-    autoplay: false,
-  });
-
-  const icon = document.createElement('div');
-  icon.classList.add('cloud-music-player-icon');
-  icon.addEventListener('click', () => {
-    player.togglePlay();
-  });
-
-  document.body.appendChild(icon);
-</script>
-
-
-
     <div class="page-container">
 
 	<div id="sidebar" class="sticky sidebar-nav fade animate-nav" style="width: 170px">
@@ -5750,6 +5725,28 @@
         </div>
     </div>
 </div>
+
+
+<div id="player"></div>
+
+<script src="https://unpkg.com/cloud-music-player@1.0.0/dist/cloud-music-player.min.js"></script>
+
+<script>
+  const player = new CloudMusicPlayer({
+    container: '#player',
+    id: 'YOUR_SONG_ID',
+    autoplay: false,
+  });
+
+  const icon = document.createElement('div');
+  icon.classList.add('cloud-music-player-icon');
+  icon.addEventListener('click', () => {
+    player.togglePlay();
+  });
+
+  document.body.appendChild(icon);
+</script>
+
 
 
         <footer class="main-footer footer-type-1 text-xs">
