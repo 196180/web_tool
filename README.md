@@ -7,7 +7,7 @@
 
 ## 在线预览
 
-https://geeeeeeeek.github.io/web_tool/
+https://x.521.cloudns.org/
 
 
 ## 二次开发
@@ -19,8 +19,11 @@ https://geeeeeeeek.github.io/web_tool/
 
 ## 参考资料
 
+- https://geeeeeeeek.github.io/web_tool/
+
 - https://web-tool-omega.vercel.app/
 
 - https://web-a55.pages.dev/
 
 - https://hrzhanghuan.com
+
