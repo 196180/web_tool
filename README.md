@@ -8,7 +8,7 @@
 ## 在线预览
 
 https://x.521.cloudns.org/
-  [![HitCount](https://hits.dwyl.com/https://githubcom/196180/web_tool.svg?style=flat-square&show=unique)](http://hits.dwyl.com/https://githubcom/196180/web_tool)
+[![HitCount](https://hits.dwyl.com/196180/web_tool.svg?style=flat-square&show=unique)](http://hits.dwyl.com/196180/web_tool)
 
 
 ## 二次开发
