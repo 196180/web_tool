@@ -8,6 +8,7 @@
 ## 在线预览
 
 https://x.521.cloudns.org/
+  [![HitCount](https://hits.dwyl.com/https://githubcom/196180/web_tool.svg?style=flat-square)](http://hits.dwyl.com/https://githubcom/196180/web_tool)
 
 
 ## 二次开发
@@ -26,4 +27,4 @@ https://x.521.cloudns.org/
 - https://web-a55.pages.dev/
 
 - https://hrzhanghuan.com
-  [![HitCount](https://hits.dwyl.com/https://githubcom/196180/web_tool.svg?style=flat-square)](http://hits.dwyl.com/https://githubcom/196180/web_tool)
+ 
