@@ -6714,6 +6714,8 @@ function switchNightMode() {
     // 切换到夜间模式
     $("#search-bg").css("background-image", "url(assets/images/bg-dna.jpg)");
     // --- 添加以下代码 ---
+    // 使用 setTimeout 确保图片加载完成后再判断
+    setTimeout(function() {
     // 判断图片是否存在
     var hasImage = $("#search-bg").css("background-image") !== "none";
 
@@ -6733,6 +6735,8 @@ function switchNightMode() {
     // 切换到日间模式
     $("#search-bg").css("background-image", "url(https://tuapi.eees.cc/api.php?category=dongman&type=302)");
     // --- 添加以下代码 ---
+    // 使用 setTimeout 确保图片加载完成后再判断
+    setTimeout(function() {
     // 判断图片是否存在
     var hasImage = $("#search-bg").css("background-image") !== "none";
 
