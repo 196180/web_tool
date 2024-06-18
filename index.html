@@ -6682,26 +6682,24 @@ var theme = {"ajaxurl":"","addico":"https:\/\/nav.baidu.cn\/wp-content\/themes\/
 
 <script>
 
-(function(){
-    if(document.cookie.replace(/(?:(?:^|.*;\s*)night\s*\=\s*([^;]*).*$)|^.*$/, "$1") === ''){
-        if(new Date().getHours() > 22 || new Date().getHours() < 6){
-            document.body.classList.remove('io-black-mode');
-            document.body.classList.add('io-grey-mode');
-            document.cookie = "night=1;path=/";
-            console.log('夜间模式开启');
-        }else{
-            document.body.classList.remove('night');
-            document.cookie = "night=0;path=/";
-            console.log('夜间模式关闭');
-        }
-    }else{
-        var night = document.cookie.replace(/(?:(?:^|.*;\s*)night\s*\=\s*([^;]*).*$)|^.*$/, "$1") || '0';
-        if(night == '0'){
-            document.body.classList.remove('night');
-        }else if(night == '1'){
-            document.body.classList.add('night');
-        }
-    }
+(function() {
+  // 获取 night cookie 值，如果不存在则默认为 '0' (日间模式)
+  var isNightMode = document.cookie.replace(/(?:(?:^|.*;\s*)night\s*\=\s*([^;]*).*$)|^.*$/, "\$1") || '0';
+
+  // 根据当前时间和 cookie 值设置夜间模式
+  if (isNightMode === '0' && (new Date().getHours() > 22 || new Date().getHours() < 6)) {
+    // 当前时间为夜间，且 cookie 设置为日间模式，则切换到夜间模式
+    document.body.classList.remove('io-grey-mode');
+    document.body.classList.add('io-black-mode');
+    document.cookie = "night=1;path=/";
+    console.log('夜间模式开启');
+  } else if (isNightMode === '1' && (new Date().getHours() <= 22 && new Date().getHours() >= 6)) {
+    // 当前时间为日间，且 cookie 设置为夜间模式，则切换到日间模式
+    document.body.classList.remove('io-black-mode');
+    document.body.classList.add('io-grey-mode');
+    document.cookie = "night=0;path=/";
+    console.log('夜间模式关闭');
+  }
 })();
 
 // 初始化背景图片
