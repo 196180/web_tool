@@ -112,6 +112,8 @@ footer.main-footer .footer-text a:hover {
 }
 
 /* 夜间模式下隐藏网格背景 */
+/* 夜间模式下隐藏网格背景 */
 .io-black-mode .page-container .grid-bg {
     background-image: none; 
+    background-color: #000000; /* 夜间模式下设置背景颜色为黑色 */
 }
