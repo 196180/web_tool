@@ -6707,46 +6707,48 @@ $("#search-bg").css("background-image", "url(https://tuapi.eees.cc/api.php?categ
 
 function switchNightMode() {
   // 获取 night cookie 值，如果不存在则默认为 '0'
-  var night = document.cookie.replace(/(?:(?:^|.*;\s*)night\s*\=\s*([^;]*).*$)|^.*$/, "\$1") || '0';
+  var night = document.cookie.replace(/(?:(?:^|.*;\s*)night\s*\=\s*([^;]*).*$)|^.*$/, "\\$1") || '0';
 
   // 根据当前模式切换到相反的模式
-  if (night === '0') { 
+  if (night === '0') {
     // 切换到夜间模式
     $("#search-bg").css("background-image", "url(assets/images/bg-dna.jpg)");
-    // --- 添加以下代码 ---
-    // 使用 setTimeout 确保图片加载完成后再判断
-    setTimeout(function() {
-    // 判断图片是否存在
-    var hasImage = $("#search-bg").css("background-image") !== "none";
 
-    // 根据图片是否存在添加/移除样式
-    if (hasImage) {
-      $("#search-bg").parent().addClass("image-above");
-    } else {
-      $("#search-bg").parent().removeClass("image-above");
-    }
-    // 
+    // --- 将 setTimeout 函数移至此处 ---
+    setTimeout(function() {
+      // 判断图片是否存在
+      var hasImage = $("#search-bg").css("background-image") !== "none";
+
+      // 根据图片是否存在添加/移除样式
+      if (hasImage) {
+        $(".page-container").addClass("image-above"); // 假设父元素是 .page-container
+      } else {
+        $(".page-container").removeClass("image-above");
+      }
+    }, 500); // 延迟 500 毫秒
+
     document.body.classList.remove('io-grey-mode');
     document.body.classList.add('io-black-mode');
     document.cookie = "night=1;path=/";
     $(".switch-dark-mode").attr("data-original-title", "日间模式");
     $(".mode-ico").removeClass("icon-night").addClass("icon-light");
-  } else { 
+  } else {
     // 切换到日间模式
     $("#search-bg").css("background-image", "url(https://tuapi.eees.cc/api.php?category=dongman&type=302)");
-    // --- 添加以下代码 ---
-    // 使用 setTimeout 确保图片加载完成后再判断
-    setTimeout(function() {
-    // 判断图片是否存在
-    var hasImage = $("#search-bg").css("background-image") !== "none";
 
-    // 根据图片是否存在添加/移除样式
-    if (hasImage) {
-      $("#search-bg").parent().addClass("image-above");
-    } else {
-      $("#search-bg").parent().removeClass("image-above");
-    }
-    //
+    // --- 将 setTimeout 函数移至此处 ---
+    setTimeout(function() {
+      // 判断图片是否存在
+      var hasImage = $("#search-bg").css("background-image") !== "none";
+
+      // 根据图片是否存在添加/移除样式
+      if (hasImage) {
+        $(".page-container").addClass("image-above"); // 假设父元素是 .page-container
+      } else {
+        $(".page-container").removeClass("image-above");
+      }
+    }, 500); // 延迟 500 毫秒
+
     document.body.classList.remove('io-black-mode');
     document.body.classList.add('io-grey-mode');
     document.cookie = "night=0;path=/";
@@ -6755,7 +6757,7 @@ function switchNightMode() {
   }
 
   // 可以根据需要输出日志
-  console.log('模式切换成功'); 
+  console.log('模式切换成功');
 }
 </script>
 </body>
