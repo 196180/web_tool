@@ -6714,19 +6714,16 @@ function switchNightMode() {
     // 切换到夜间模式
     $("#search-bg").css("background-image", "url(assets/images/bg-dna.jpg)");
 
-    // --- 将 setTimeout 函数移至此处 ---
-    setTimeout(function() {
-      // 判断图片是否存在
-      var hasImage = $("#search-bg").css("background-image") !== "none";
+    // 判断图片是否存在
+    var hasImage = $("#search-bg").css("background-image") !== "none";
 
-      // 根据图片是否存在添加/移除样式
-      if (hasImage) {
-        $(".page-container").addClass("image-above"); // 假设父元素是 .page-container
-      } else {
-        $(".page-container").removeClass("image-above");
-      }
-    }, 500); // 延迟 500 毫秒
-
+    // 根据图片是否存在添加/移除样式
+    if (hasImage) {
+      $("#search-bg").parent().addClass("image-above");
+    } else {
+      $("#search-bg").parent().removeClass("image-above");
+    }
+    //
     document.body.classList.remove('io-grey-mode');
     document.body.classList.add('io-black-mode');
     document.cookie = "night=1;path=/";
@@ -6736,18 +6733,19 @@ function switchNightMode() {
     // 切换到日间模式
     $("#search-bg").css("background-image", "url(https://tuapi.eees.cc/api.php?category=dongman&type=302)");
 
-    // --- 将 setTimeout 函数移至此处 ---
-    setTimeout(function() {
-      // 判断图片是否存在
+    //
       var hasImage = $("#search-bg").css("background-image") !== "none";
 
-      // 根据图片是否存在添加/移除样式
-      if (hasImage) {
-        $(".page-container").addClass("image-above"); // 假设父元素是 .page-container
-      } else {
-        $(".page-container").removeClass("image-above");
-      }
-    }, 500); // 延迟 500 毫秒
+   // 判断图片是否存在
+    var hasImage = $("#search-bg").css("background-image") !== "none";
+
+    // 根据图片是否存在添加/移除样式
+    if (hasImage) {
+      $("#search-bg").parent().addClass("image-above");
+    } else {
+      $("#search-bg").parent().removeClass("image-above");
+    }
+    //
 
     document.body.classList.remove('io-black-mode');
     document.body.classList.add('io-grey-mode');
