@@ -110,3 +110,6 @@ footer.main-footer .footer-text a:hover {
     position: relative; /* 保持相对定位 */
     z-index: 1; /* 网格始终在图片下方 */
 }
+.io-black-mode .page-container .grid-bg {
+    background-image: none; 
+}
