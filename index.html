@@ -277,30 +277,49 @@
 
                         <div class="rounded-circle weather">
                             <div id="he-plugin-simple" style="display: contents;"></div>
-                            <script>WIDGET = {
-                                    CONFIG: {
-                                        "modules": "01234",
-                                        "background": 5,
-                                        "tmpColor": "E4C600",
-                                        "tmpSize": 14,
-                                        "cityColor": "E4C600",
-                                        "citySize": 14,
-                                        "aqiColor": "#E4C600",
-                                        "aqiSize": 14,
-                                        "weatherIconSize": 24,
-                                        "alertIconSize": 18,
-                                        "padding": "10px 10px 10px 10px",
-                                        "shadow": "1",
-                                        "language": "auto",
-                                        "borderRadius": 5,
-                                        "fixed": "false",
-                                        "vertical": "middle",
-                                        "horizontal": "left",
-                                        "key": "085791e805a24491b43b06cf58ab31e7"
-                                    }
-                                }
-                            </script>
-                            <script src="https://widget.qweather.net/simple/static/js/he-simple-common.js?v=2.0"></script>
+  <script>
+    const apiKey = '6c5fd5a3ee42453ea0b4b83134c86b27'; // 你的和风天气 API key
+
+    function getWeatherByLocation(latitude, longitude) {
+      fetch(`https://devapi.qweather.com/v7/weather/now?location=${longitude},${latitude}&key=${apiKey}`)
+        .then(response => response.json())
+        .then(data => {
+          const weatherInfo = document.getElementById('weather-info');
+          if (data.code === '200') {
+            const weatherData = data.now;
+            weatherInfo.innerHTML = `
+              <p>城市：${data.basic.location}</p>
+              <p>温度：${weatherData.temp}℃</p>
+              <p>天气：${weatherData.text}</p>
+              <p>风向：${weatherData.windDir}</p>
+            `;
+          } else {
+            weatherInfo.innerHTML = `<p>获取天气信息失败，请稍后再试</p>`;
+          }
+        })
+        .catch(error => {
+          console.error('获取天气数据失败:', error);
+          document.getElementById('weather-info').innerHTML = `<p>获取天气信息失败，请稍后再试</p>`;
+        });
+    }
+
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          const latitude = position.coords.latitude;
+          const longitude = position.coords.longitude;
+          getWeatherByLocation(latitude, longitude);
+        },
+        (error) => {
+          console.error('获取地理位置失败:', error);
+          document.getElementById('weather-info').innerHTML = `<p>无法获取您的位置信息</p>`;
+        }
+      );
+    } else {
+      console.error('浏览器不支持地理位置 API');
+      document.getElementById('weather-info').innerHTML = `<p>您的浏览器不支持地理位置服务</p>`;
+    }
+  </script>
                         </div>
 
                     </div>
