@@ -7337,7 +7337,7 @@ var theme = {"ajaxurl":"","addico":"https:\/\/nav.baidu.cn\/wp-content\/themes\/
 })();
 
 // 初始化背景图片
-$("#search-bg").css("background-image", "url(https://tuapi.eees.cc/api.php?category=dongman&type=302)");
+$("#search-bg").css("background-image", "url(https://images.linux-do.rr.nu/api.php)");
 function switchNightMode(){
     var night = document.cookie.replace(/(?:(?:^|.*;\s*)night\s*\=\s*([^;]*).*$)|^.*$/, "$1") || '0';
     if(night == '0'){
@@ -7350,7 +7350,7 @@ function switchNightMode(){
         $(".mode-ico").removeClass("icon-night");
         $(".mode-ico").addClass("icon-light");
     }else{
-	$("#search-bg").css("background-image", "url(https://tuapi.eees.cc/api.php?category=dongman&type=302)")
+	$("#search-bg").css("background-image", "url(https://images.linux-do.rr.nu/api.php)")
         document.body.classList.remove('io-black-mode');
         document.body.classList.add('io-grey-mode');
         document.cookie = "night=0;path=/"
